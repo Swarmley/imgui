@@ -9,36 +9,25 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Dist|x64">
-      <Configuration>Dist</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C0FF640D-2C14-8DBE-F595-301E616989EF}</ProjectGuid>
+    <ProjectGuid>{0098A80F-6CAC-D0C0-352E-7420A101CDF1}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ImGui</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <RootNamespace>imgui</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -49,73 +38,64 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>bin\Debug-windows-x86_64\ImGui\</OutDir>
-    <IntDir>bin-int\Debug-windows-x86_64\ImGui\</IntDir>
-    <TargetName>ImGui</TargetName>
+    <OutDir>..\..\..\bin\Debug\imgui\</OutDir>
+    <IntDir>obj\Debug\</IntDir>
+    <TargetName>imgui</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>bin\Release-windows-x86_64\ImGui\</OutDir>
-    <IntDir>bin-int\Release-windows-x86_64\ImGui\</IntDir>
-    <TargetName>ImGui</TargetName>
-    <TargetExt>.lib</TargetExt>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
-    <OutDir>bin\Dist-windows-x86_64\ImGui\</OutDir>
-    <IntDir>bin-int\Dist-windows-x86_64\ImGui\</IntDir>
-    <TargetName>ImGui</TargetName>
+    <OutDir>..\..\..\bin\Release\imgui\</OutDir>
+    <IntDir>obj\Release\</IntDir>
+    <TargetName>imgui</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>..\SDL\Build\.vs;..\SDL\Build\CMakeFiles;..\SDL\Build\Debug;..\SDL\Build\include-config-debug;..\SDL\Build\include-config-minsizerel;..\SDL\Build\include-config-release;..\SDL\Build\include-config-relwithdebinfo;..\SDL\Build\include-revision;..\SDL\Build\SDL3-shared.dir;..\SDL\Build\SDL3_test.dir;..\SDL\Build\SDL_uclibc.dir;..\SDL\Build\x64;..\SDL\Build\.vs\SDL3;..\SDL\Build\.vs\SDL3\FileContentIndex;..\SDL\Build\.vs\SDL3\v17;..\SDL\Build\.vs\SDL3\v17\ipch;..\SDL\Build\.vs\SDL3\v17\ipch\AutoPCH;..\SDL\Build\.vs\SDL3\v17\ipch\AutoPCH\2c6f2205ceb32815;..\SDL\Build\.vs\SDL3\v17\ipch\AutoPCH\f7c799b814477b9c;..\SDL\Build\CMakeFiles\3.31.4;..\SDL\Build\CMakeFiles\CMakeTmp;..\SDL\Build\CMakeFiles\d8c276ecc6af3d23320b6d2190c0cdd4;..\SDL\Build\CMakeFiles\Export;..\SDL\Build\CMakeFiles\git-data;..\SDL\Build\CMakeFiles\pkgRedirects;..\SDL\Build\CMakeFiles\SDL3-shared.dir;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath;..\SDL\Build\CMakeFiles\3.31.4\x64;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC\Debug;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC\tmp;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC\Debug\CompilerIdC.tlog;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath\x64;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath\x64\Debug;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath\x64\Debug\VCTargetsPath.tlog;..\SDL\Build\CMakeFiles\3.31.4\x64\Debug;..\SDL\Build\CMakeFiles\CMakeTmp\SDL_detect_arch;..\SDL\Build\CMakeFiles\CMakeTmp\SDL_detect_arch\CMakeFiles;..\SDL\Build\CMakeFiles\CMakeTmp\SDL_detect_arch\CMakeFiles\CMakeTmp;..\SDL\Build\CMakeFiles\Export\272ceadb8458515b2ae4b5630a6029cc;..\SDL\Build\CMakeFiles\SDL3-shared.dir\Debug;..\SDL\Build\CMakeFiles\SDL3-shared.dir\MinSizeRel;..\SDL\Build\CMakeFiles\SDL3-shared.dir\Release;..\SDL\Build\CMakeFiles\SDL3-shared.dir\RelWithDebInfo;..\SDL\Build\include-config-debug\build_config;..\SDL\Build\include-config-minsizerel\build_config;..\SDL\Build\include-config-release\build_config;..\SDL\Build\include-config-relwithdebinfo\build_config;..\SDL\Build\include-revision\SDL3;..\SDL\Build\SDL3-shared.dir\Debug;..\SDL\Build\SDL3-shared.dir\Debug\SDL3-shared.tlog;..\SDL\Build\SDL3_test.dir\Debug;..\SDL\Build\SDL3_test.dir\Debug\SDL3_test.tlog;..\SDL\Build\SDL_uclibc.dir\Debug;..\SDL\Build\SDL_uclibc.dir\Debug\SDL_uclibc.tlog;..\SDL\Build\x64\Debug;..\SDL\Build\x64\Debug\ALL_BUILD;..\SDL\Build\x64\Debug\ZERO_CHECK;..\SDL\Build\x64\Debug\ALL_BUILD\ALL_BUILD.tlog;..\SDL\Build\x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.;..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
-    <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>..\SDL\Build\.vs;..\SDL\Build\CMakeFiles;..\SDL\Build\Debug;..\SDL\Build\include-config-debug;..\SDL\Build\include-config-minsizerel;..\SDL\Build\include-config-release;..\SDL\Build\include-config-relwithdebinfo;..\SDL\Build\include-revision;..\SDL\Build\SDL3-shared.dir;..\SDL\Build\SDL3_test.dir;..\SDL\Build\SDL_uclibc.dir;..\SDL\Build\x64;..\SDL\Build\.vs\SDL3;..\SDL\Build\.vs\SDL3\FileContentIndex;..\SDL\Build\.vs\SDL3\v17;..\SDL\Build\.vs\SDL3\v17\ipch;..\SDL\Build\.vs\SDL3\v17\ipch\AutoPCH;..\SDL\Build\.vs\SDL3\v17\ipch\AutoPCH\2c6f2205ceb32815;..\SDL\Build\.vs\SDL3\v17\ipch\AutoPCH\f7c799b814477b9c;..\SDL\Build\CMakeFiles\3.31.4;..\SDL\Build\CMakeFiles\CMakeTmp;..\SDL\Build\CMakeFiles\d8c276ecc6af3d23320b6d2190c0cdd4;..\SDL\Build\CMakeFiles\Export;..\SDL\Build\CMakeFiles\git-data;..\SDL\Build\CMakeFiles\pkgRedirects;..\SDL\Build\CMakeFiles\SDL3-shared.dir;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath;..\SDL\Build\CMakeFiles\3.31.4\x64;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC\Debug;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC\tmp;..\SDL\Build\CMakeFiles\3.31.4\CompilerIdC\Debug\CompilerIdC.tlog;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath\x64;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath\x64\Debug;..\SDL\Build\CMakeFiles\3.31.4\VCTargetsPath\x64\Debug\VCTargetsPath.tlog;..\SDL\Build\CMakeFiles\3.31.4\x64\Debug;..\SDL\Build\CMakeFiles\CMakeTmp\SDL_detect_arch;..\SDL\Build\CMakeFiles\CMakeTmp\SDL_detect_arch\CMakeFiles;..\SDL\Build\CMakeFiles\CMakeTmp\SDL_detect_arch\CMakeFiles\CMakeTmp;..\SDL\Build\CMakeFiles\Export\272ceadb8458515b2ae4b5630a6029cc;..\SDL\Build\CMakeFiles\SDL3-shared.dir\Debug;..\SDL\Build\CMakeFiles\SDL3-shared.dir\MinSizeRel;..\SDL\Build\CMakeFiles\SDL3-shared.dir\Release;..\SDL\Build\CMakeFiles\SDL3-shared.dir\RelWithDebInfo;..\SDL\Build\include-config-debug\build_config;..\SDL\Build\include-config-minsizerel\build_config;..\SDL\Build\include-config-release\build_config;..\SDL\Build\include-config-relwithdebinfo\build_config;..\SDL\Build\include-revision\SDL3;..\SDL\Build\SDL3-shared.dir\Debug;..\SDL\Build\SDL3-shared.dir\Debug\SDL3-shared.tlog;..\SDL\Build\SDL3_test.dir\Debug;..\SDL\Build\SDL3_test.dir\Debug\SDL3_test.tlog;..\SDL\Build\SDL_uclibc.dir\Debug;..\SDL\Build\SDL_uclibc.dir\Debug\SDL_uclibc.tlog;..\SDL\Build\x64\Debug;..\SDL\Build\x64\Debug\ALL_BUILD;..\SDL\Build\x64\Debug\ZERO_CHECK;..\SDL\Build\x64\Debug\ALL_BUILD\ALL_BUILD.tlog;..\SDL\Build\x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="backends\imgui_impl_dx12.h" />
+    <ClInclude Include="backends\imgui_impl_sdl3.h" />
+    <ClInclude Include="backends\imgui_impl_win32.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
     <ClInclude Include="imgui_internal.h" />
@@ -124,9 +104,13 @@
     <ClInclude Include="imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="backends\imgui_impl_dx12.cpp" />
+    <ClCompile Include="backends\imgui_impl_sdl3.cpp" />
+    <ClCompile Include="backends\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_demo.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
+    <ClCompile Include="imgui_tables.cpp" />
     <ClCompile Include="imgui_widgets.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
